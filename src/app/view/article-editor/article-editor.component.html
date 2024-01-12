@@ -1,0 +1,37 @@
+<div class="h-full flex items-center justify-center">
+  <form class="w-10/12 h-5/6 flex flex-col border p-5 rounded-2xl shadow-2xl dark:shadow-gray-600 bg-white dark:bg-gray-900" (submit)="onSubmit()" [formGroup]="form">
+    <div class="mb-5 pb-5 border-b">
+      <h1 class="text-5xl text-center text-gray-900 dark:text-gray-300">Article</h1>
+    </div>
+    <div class="flex grow min-h-0">
+      <div class="w-1/2 p-2 flex flex-col">
+        <label class="block mb-2  font-medium text-gray-900 dark:text-white">Nom de l'article:
+          <input class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                 type="text" formControlName="nom"></label>
+        <label class="block mb-2  font-medium text-gray-900 dark:text-white">Prix:
+          <input class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                 type="number" formControlName="prix"></label>
+        <label class="flex flex-col grow mb-2  font-medium text-gray-900 dark:text-white">Description:
+          <textarea class="bg-gray-50 grow border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    type="text" formControlName="description"></textarea></label>
+      </div>
+      <div class="w-1/2 p-2 flex flex-col">
+        <label class="block mb-2 font-medium text-gray-900 dark:text-white">Image:
+          <input class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                 type="text" formControlName="image"></label>
+
+        <label class="flex flex-col mb-2 grow min-h-0 font-medium text-gray-900 dark:text-white">Preview:
+          <div class="bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 rounded-lg p-2 grow min-h-0 flex">
+            <div class="flex justify-center grow min-h-0">
+              <img class="h-full" alt="Product Preview" [src]="preview || 'assets/images/image-1.jpg'">
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="border-t mt-5 pt-5 flex justify-center">
+      <input class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg  w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+             type="submit" value="Enregistrer" [disabled]="form.pristine || form.invalid">
+    </div>
+</form>
+</div>

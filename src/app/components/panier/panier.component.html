@@ -1,0 +1,5 @@
+<div>
+    <app-list-articles *ngIf="panier | async; let p" [articles]="p.articles"></app-list-articles>
+</div>
+
+<button type="button" (click)="valid()">Valider ma commande</button>

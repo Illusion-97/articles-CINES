@@ -1,0 +1,8 @@
+<div class="w-full h-full flex flex-col p-5">
+  <div class="grow min-h-0" >
+    <app-list-articles [articles]="articles"></app-list-articles>
+  </div>
+  <div>
+    <app-pagination [size]="size" [total]="total" (pageChange)="getArticles($event)"></app-pagination>
+  </div>
+</div>
